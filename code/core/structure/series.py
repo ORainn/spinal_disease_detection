@@ -71,7 +71,7 @@ class Series(list):
     def middle_frame(self) -> DICOM:
         """
         会被修改的属性不应该lazy
-        :return:
+        :return: 中间帧
         """
         # 判断中间帧ID是否非空
         if self.middle_frame_uid is not None:
@@ -149,9 +149,9 @@ class Series(list):
         """
 
         :param coord: 人坐标系坐标，Nx3的矩阵或者长度为3的向量
-        :param k:
+        :param k: 要选取的图像数量
         :param max_dist: 如果距离大于max dist，那么返回一个None
-        :return:
+        :return: 在范围内符合条件的k个图像
         """
         # 首先计算所有点的距离
         distance = self.point_distance(coord)
