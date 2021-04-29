@@ -19,10 +19,10 @@ def visilize_coord(image: Union[Image.Image, torch.Tensor], *coords: torch.Tenso
     """
     显示坐标标注信息
     关于annotation的结构请参考read_annotation
-    :param image:
-    :param coords:
-    :param _range:
-    :return:
+    :param image: 图像
+    :param coords: 坐标
+    :param _range: 范围
+    :return: 处理好的PIL Image
     """
     # 先将图像转换为张量
     image = to_tensor(image)
@@ -41,10 +41,10 @@ def visilize_distmap(image: Union[Image.Image, torch.Tensor], *distmaps: torch.T
     """
     显示物理距离信息
     关于label的结构请参考gen_label
-    :param image:
-    :param distmaps:
-    :param max_dist:
-    :return:
+    :param image: 图像
+    :param distmaps: 距离张量
+    :param max_dist: 最大距离
+    :return: 处理好的PIL Image
     """
     # 先将图像转换为张量
     image = to_tensor(image)
@@ -59,10 +59,10 @@ def visilize_distmap(image: Union[Image.Image, torch.Tensor], *distmaps: torch.T
 def visilize_annotation(image, *annotations, _range=10):
     """
     显示标注文件中的信息
-    :param image:
-    :param annotations:
-    :param _range:
-    :return:
+    :param image: 图像
+    :param annotations: 标注数据
+    :param _range: 范围
+    :return: 处理好的PIL Image
     """
     # 先将图像转换为张量
     image = to_tensor(image)
